@@ -41,7 +41,7 @@ public class StudentController {
     // Final activity from the project guide.
     @GetMapping("/health")
     public Map<String, String> health() {
-        logger.info("Health check az");
+        logger.info("Health check called");
         return Map.of("status", "UP");
     }
 }
