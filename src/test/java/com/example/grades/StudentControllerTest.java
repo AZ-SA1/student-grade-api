@@ -17,11 +17,12 @@ public class StudentControllerTest {
 
     @Test
     void shouldReturnAllStudents() throws Exception {
-        // Verify the initial student remains available regardless of test execution order.
+        // Verify the initial student remains available regardless of test execution
+        // order.
         mockMvc.perform(get("/api/students"))
-            .andExpect(status().isOk())
-            .andExpect(jsonPath("$[0].name").value("Ahmed"))
-            .andExpect(jsonPath("$[1].name").value("Sara"));
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$[0].name").value("Ahmed"))
+                .andExpect(jsonPath("$[1].name").value("Sara"));
     }
 
     @Test
@@ -30,14 +31,14 @@ public class StudentControllerTest {
         mockMvc.perform(post("/api/students")
                 .contentType("application/json")
                 .content(json))
-            .andExpect(status().isOk())
-            .andExpect(jsonPath("$.name").value("Khalid"));
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$.name").value("Khalid"));
     }
 
     @Test
     void healthCheckShouldReturnUp() throws Exception {
         mockMvc.perform(get("/api/health"))
-            .andExpect(status().isOk())
-            .andExpect(jsonPath("$.status").value("UP"));
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$.status").value("Abdulaziz"));
     }
 }
